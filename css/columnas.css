@@ -1,0 +1,79 @@
+/*Global*/
+*{
+    margin:0px;
+    padding:0px;
+    list-style: none;
+    text-decoration:none;
+    font-family: sans-serif;
+    /*El box-sizing = asegura que el relleno y el borde esten incluidos en el ancho y altura total de la caja html*/
+    box-sizing:border-box;
+}
+
+.contenedor{
+    position: relative;
+    margin: auto;
+    width:100%;
+    height:auto;
+}
+
+.fila{
+    position: relative;
+    margin: auto;
+    width:100%;
+    height:auto;
+    /*limpieza para que respete los elementos o cajas flotantes dentro de cada fila
+    para que no se suban a otras filas */
+    /*Las columnas dentro de uan fila estan flotando a la izquierda
+    y por lo tanto se toma fera del flujo de la pagina y otros elementos
+    seran colocados como si no fueran de las columnas. 
+    Para evitar esto se añade un estilo que despeja el flujo con clear:both y display tables*/
+    clear:both;    
+    display:table;/*El display:table Se usa para que se respete el area que estan utilizando 
+    las cajas flotantes */
+}
+/*Con esta seleccion decimos que todas las clases que inicien
+ con la palabra "col-" tengan estos atrubutos. */
+[class*="col-"]{
+    float:left;
+    border: 1px solid black;
+    padding:20px;
+}
+/*El total de columnas es 12, para saber el tamaño de las otras 11
+debemos hacer una regla de 3 "n*100/12" donde n=al numero de columnas que queremos saber*/
+.col-12{    
+    width:100%;   
+}
+.col-11{    
+    width:91.6666667%;   
+}
+.col-10{    
+    width:83.33333333%;   
+}
+.col-9{    
+    width:75%;  
+}
+.col-8{    
+    width:66.6666667%;  
+}
+.col-7{    
+    width:58.33333333%;  
+}
+.col-6{    
+    width:50%;  
+}
+.col-5{    
+    width:41.66666667%;  
+}
+/* Boostrap dice que se usen 8 decimales*/
+.col-4{    
+    width:33.33333333%;    
+}
+.col-3{    
+    width:25%;    
+}
+.col-2{    
+    width:16.6666667%;  
+}
+.col-1{    
+    width:8.33333333%;  
+}
